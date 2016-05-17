@@ -7,6 +7,7 @@ VERSION = int(sublime.version())
 
 class BrainfuckInterpreterCommand(sublime_plugin.TextCommand):
     """Implementation of interpreter for Brainfuck"""
+
     def run(self, edit):
         sels = self.view.sel()
         self.edit = edit
@@ -100,5 +101,6 @@ class BrainfuckInterpreterCommand(sublime_plugin.TextCommand):
 
 class BrainfuckResultCommand(sublime_plugin.TextCommand):
     """Print result of Brainfuck interpreter"""
+
     def run(self, edit, result):
         self.view.insert(edit, 0, result)
