@@ -57,10 +57,13 @@ class BrainfuckInterpreterCommand(sublime_plugin.TextCommand):
         elif command == '+':
             if self.cells[self.pointer] < 255:
                 self.cells[self.pointer] += 1
-
+            else:
+                self.cells[self.pointer] = 0
         elif command == '-':
             if self.cells[self.pointer] > 0:
                 self.cells[self.pointer] -= 1
+            else:
+                self.cells[self.pointer] = 255
 
         elif command == '.':
             if self.pointer in self.cells:
